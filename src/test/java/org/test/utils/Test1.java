@@ -16,7 +16,8 @@ public class Test1 {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\admin\\eclipse-workspace\\WaitsConcept\\target\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://adactin.com/HotelApp/");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
+		WebDriverWait wd = new WebDriverWait(driver, 10);
+		wd.until(ExpectedConditions.alertIsPresent());
 		
 	}
 }
